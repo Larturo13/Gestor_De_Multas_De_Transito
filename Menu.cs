@@ -31,5 +31,10 @@ namespace Gestor_De_Multas_De_Transito
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
