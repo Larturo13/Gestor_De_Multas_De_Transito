@@ -36,5 +36,10 @@ namespace Gestor_De_Multas_De_Transito
         {
 
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
