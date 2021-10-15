@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,15 +47,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menu.cs">
+    <Compile Include="Datos\EnvioPersonas\IngresoPersonas.cs" />
+    <Compile Include="Grafico\Personas\ActualizarPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
+    <Compile Include="Grafico\Personas\ActualizarPersonas.Designer.cs">
+      <DependentUpon>ActualizarPersonas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafico\Personas\IngresarPersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\Personas\IngresarPersonas.Designer.cs">
+      <DependentUpon>IngresarPersonas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafico\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Personas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="Grafico\Personas\ActualizarPersonas.resx">
+      <DependentUpon>ActualizarPersonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafico\Personas\IngresarPersonas.resx">
+      <DependentUpon>IngresarPersonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafico\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -78,6 +99,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Grafico\AjustarMultas\" />
+    <Folder Include="Grafico\AplicarMultas\" />
+    <Folder Include="Grafico\ConstultarMultas\" />
+    <Folder Include="Grafico\Usuarios\" />
+    <Folder Include="Grafico\Vehiculos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

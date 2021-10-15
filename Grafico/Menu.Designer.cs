@@ -44,7 +44,7 @@ namespace Gestor_De_Multas_De_Transito
             this.eliminarTipoDeMultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip5 = new System.Windows.Forms.MenuStrip();
             this.M_Personas = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.M_PCrear = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
@@ -60,7 +60,7 @@ namespace Gestor_De_Multas_De_Transito
             this.M_Salir = new System.Windows.Forms.MenuStrip();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PContainer = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
@@ -70,7 +70,6 @@ namespace Gestor_De_Multas_De_Transito
             this.menuStrip6.SuspendLayout();
             this.M_Salir.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -104,7 +103,7 @@ namespace Gestor_De_Multas_De_Transito
             // 
             // M_ConMult
             // 
-            this.M_ConMult.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.M_ConMult.BackColor = System.Drawing.SystemColors.Highlight;
             this.M_ConMult.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.M_ConMult.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.M_ConMult.Name = "M_ConMult";
@@ -158,7 +157,7 @@ namespace Gestor_De_Multas_De_Transito
             // 
             // M_AjusMult
             // 
-            this.M_AjusMult.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.M_AjusMult.BackColor = System.Drawing.SystemColors.Highlight;
             this.M_AjusMult.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem7,
             this.actualizarTipoDeMultaToolStripMenuItem,
@@ -201,7 +200,7 @@ namespace Gestor_De_Multas_De_Transito
             // M_Personas
             // 
             this.M_Personas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem6,
+            this.M_PCrear,
             this.actualizarToolStripMenuItem,
             this.eliminarToolStripMenuItem});
             this.M_Personas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -210,23 +209,24 @@ namespace Gestor_De_Multas_De_Transito
             this.M_Personas.Size = new System.Drawing.Size(84, 22);
             this.M_Personas.Text = "Personas";
             // 
-            // toolStripMenuItem6
+            // M_PCrear
             // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(144, 22);
-            this.toolStripMenuItem6.Text = "Crear";
-            this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
+            this.M_PCrear.Name = "M_PCrear";
+            this.M_PCrear.Size = new System.Drawing.Size(180, 22);
+            this.M_PCrear.Text = "Crear";
+            this.M_PCrear.Click += new System.EventHandler(this.M_PCrear_Click);
             // 
             // actualizarToolStripMenuItem
             // 
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.actualizarToolStripMenuItem.Text = "Actualizar ";
+            this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.actualizarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             // 
             // menuStrip2
@@ -327,6 +327,7 @@ namespace Gestor_De_Multas_De_Transito
             // 
             // salirToolStripMenuItem
             // 
+            this.salirToolStripMenuItem.BackColor = System.Drawing.SystemColors.Highlight;
             this.salirToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
@@ -337,22 +338,21 @@ namespace Gestor_De_Multas_De_Transito
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Navy;
-            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.PContainer);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Location = new System.Drawing.Point(13, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(704, 475);
             this.panel2.TabIndex = 1;
             // 
-            // pictureBox1
+            // PContainer
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(156, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(545, 469);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.PContainer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PContainer.BackgroundImage")));
+            this.PContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PContainer.Location = new System.Drawing.Point(160, 4);
+            this.PContainer.Name = "PContainer";
+            this.PContainer.Size = new System.Drawing.Size(541, 468);
+            this.PContainer.TabIndex = 1;
             // 
             // Menu
             // 
@@ -382,7 +382,6 @@ namespace Gestor_De_Multas_De_Transito
             this.M_Salir.ResumeLayout(false);
             this.M_Salir.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -400,7 +399,7 @@ namespace Gestor_De_Multas_De_Transito
         private System.Windows.Forms.ToolStripMenuItem M_Personas;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem M_PCrear;
         private System.Windows.Forms.ToolStripMenuItem abonarAMultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actualizarTipoDeMultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarTipoDeMultaToolStripMenuItem;
@@ -419,7 +418,7 @@ namespace Gestor_De_Multas_De_Transito
         private System.Windows.Forms.MenuStrip M_Salir;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel PContainer;
     }
 }
 
