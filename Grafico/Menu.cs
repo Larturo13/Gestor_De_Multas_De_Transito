@@ -17,12 +17,19 @@ namespace Gestor_De_Multas_De_Transito
             InitializeComponent();
         }
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private void AbrirFormHija(Object formhija)
         {
-
+            if (this.PContainer.Controls.Count > 0)
+                this.PContainer.Controls.RemoveAt(0);
+            Form fh = formhija as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.PContainer.Controls.Add(fh);
+            this.PContainer.Tag = fh;
+            fh.Show();
         }
 
-        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
 
         }
@@ -40,6 +47,11 @@ namespace Gestor_De_Multas_De_Transito
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void M_PCrear_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new Grafico.IngresarPersonas());
         }
     }
 }
