@@ -51,7 +51,7 @@ namespace Gestor_De_Multas_De_Transito
 
         private void M_PCrear_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new Grafico.IngresarPersonas());
+            AbrirFormHija(new Grafico.Personas.IngresarPersonas());
         }
 
         private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)

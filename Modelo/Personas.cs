@@ -12,7 +12,7 @@ namespace Gestor_De_Multas_De_Transito.Modelo
         public string nombreApellido { get; set; }
         public DateTime fechaNacimiento { get; set; }
         public string direccion { get; set; }
-        public string telfono { get; set; }
+        public string telefono { get; set; }
 
     }
 }

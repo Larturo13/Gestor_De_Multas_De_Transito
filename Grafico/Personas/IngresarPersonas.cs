@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Gestor_De_Multas_De_Transito.Grafico
+namespace Gestor_De_Multas_De_Transito.Grafico.Personas
 {
     public partial class IngresarPersonas : Form
     {
@@ -24,7 +24,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico
             Personas.nombreApellido = txt_NomApell.Text;
             Personas.fechaNacimiento = Dtp_FechaNac.Value;
             Personas.direccion = txt_Direccion.Text;
-            Personas.telfono = txt_Telefono.Text;
+            Personas.telefono = txt_Telefono.Text;
 
             Datos.EnvioPersonas.IngresoPersonas ingresoP = new Datos.EnvioPersonas.IngresoPersonas();
 

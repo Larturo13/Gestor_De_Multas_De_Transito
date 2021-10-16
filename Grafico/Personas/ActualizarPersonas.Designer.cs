@@ -38,23 +38,26 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             this.txt_Direccion = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btn_Buscardenuevo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_NomApell
             // 
+            this.txt_NomApell.Enabled = false;
             this.txt_NomApell.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.txt_NomApell.Location = new System.Drawing.Point(200, 160);
+            this.txt_NomApell.Location = new System.Drawing.Point(168, 160);
             this.txt_NomApell.Name = "txt_NomApell";
-            this.txt_NomApell.Size = new System.Drawing.Size(277, 24);
+            this.txt_NomApell.Size = new System.Drawing.Size(309, 24);
             this.txt_NomApell.TabIndex = 13;
             // 
             // txt_DPI
             // 
             this.txt_DPI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.txt_DPI.Location = new System.Drawing.Point(200, 110);
+            this.txt_DPI.Location = new System.Drawing.Point(168, 110);
             this.txt_DPI.Name = "txt_DPI";
-            this.txt_DPI.Size = new System.Drawing.Size(277, 24);
+            this.txt_DPI.Size = new System.Drawing.Size(309, 24);
             this.txt_DPI.TabIndex = 12;
+            this.txt_DPI.Validating += new System.ComponentModel.CancelEventHandler(this.txt_DPI_Validating);
             // 
             // label4
             // 
@@ -81,28 +84,28 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             // btn_Guardar
             // 
             this.btn_Guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Guardar.Location = new System.Drawing.Point(340, 307);
+            this.btn_Guardar.Location = new System.Drawing.Point(340, 309);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(137, 26);
             this.btn_Guardar.TabIndex = 19;
-            this.btn_Guardar.Text = "Guardar";
+            this.btn_Guardar.Text = "Actualizar";
             this.btn_Guardar.UseVisualStyleBackColor = true;
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
             // txt_Telefono
             // 
             this.txt_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.txt_Telefono.Location = new System.Drawing.Point(200, 258);
+            this.txt_Telefono.Location = new System.Drawing.Point(168, 260);
             this.txt_Telefono.Name = "txt_Telefono";
-            this.txt_Telefono.Size = new System.Drawing.Size(277, 24);
+            this.txt_Telefono.Size = new System.Drawing.Size(309, 24);
             this.txt_Telefono.TabIndex = 18;
             // 
             // txt_Direccion
             // 
             this.txt_Direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.txt_Direccion.Location = new System.Drawing.Point(200, 208);
+            this.txt_Direccion.Location = new System.Drawing.Point(168, 210);
             this.txt_Direccion.Name = "txt_Direccion";
-            this.txt_Direccion.Size = new System.Drawing.Size(277, 24);
+            this.txt_Direccion.Size = new System.Drawing.Size(309, 24);
             this.txt_Direccion.TabIndex = 17;
             // 
             // label6
@@ -110,7 +113,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label6.Location = new System.Drawing.Point(41, 261);
+            this.label6.Location = new System.Drawing.Point(41, 263);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 18);
             this.label6.TabIndex = 16;
@@ -121,11 +124,22 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label5.Location = new System.Drawing.Point(41, 211);
+            this.label5.Location = new System.Drawing.Point(41, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 18);
             this.label5.TabIndex = 15;
             this.label5.Text = "Direccion:";
+            // 
+            // btn_Buscardenuevo
+            // 
+            this.btn_Buscardenuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Buscardenuevo.Location = new System.Drawing.Point(168, 309);
+            this.btn_Buscardenuevo.Name = "btn_Buscardenuevo";
+            this.btn_Buscardenuevo.Size = new System.Drawing.Size(166, 26);
+            this.btn_Buscardenuevo.TabIndex = 21;
+            this.btn_Buscardenuevo.Text = "Buscar otra persona\r\n";
+            this.btn_Buscardenuevo.UseVisualStyleBackColor = true;
+            this.btn_Buscardenuevo.Click += new System.EventHandler(this.btn_Buscardenuevo_Click);
             // 
             // ActualizarPersonas
             // 
@@ -133,6 +147,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(525, 429);
+            this.Controls.Add(this.btn_Buscardenuevo);
             this.Controls.Add(this.btn_Guardar);
             this.Controls.Add(this.txt_Telefono);
             this.Controls.Add(this.txt_Direccion);
@@ -145,6 +160,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ActualizarPersonas";
             this.Text = "ActualizarPersonas";
+            this.Load += new System.EventHandler(this.ActualizarPersonas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,5 +177,6 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
         private System.Windows.Forms.TextBox txt_Direccion;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn_Buscardenuevo;
     }
 }

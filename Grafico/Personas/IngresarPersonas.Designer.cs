@@ -1,5 +1,5 @@
 ﻿
-namespace Gestor_De_Multas_De_Transito.Grafico
+namespace Gestor_De_Multas_De_Transito.Grafico.Personas
 {
     partial class IngresarPersonas
     {
