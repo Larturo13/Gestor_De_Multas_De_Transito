@@ -22,6 +22,10 @@ namespace Gestor_De_Multas_De_Transito.Datos.EnvioPersonas
         {
             string respuesta;
             var request = (HttpWebRequest)WebRequest.Create("http://apimultas.azurewebsites.net/api/AccPer/");
+            var request = (HttpWebRequest)WebRequest.Create("https://webapimultas.azurewebsites.net/api/InsertarPer");
+=========
+            var request = (HttpWebRequest)WebRequest.Create("https://webapimultas.azurewebsites.net/api/AccPer");
+>>>>>>>>> Temporary merge branch 2
             try
             {
                 request.ContentType = "application/json";
@@ -103,8 +107,9 @@ namespace Gestor_De_Multas_De_Transito.Datos.EnvioPersonas
 
             dynamic data = JsonConvert.DeserializeObject(Datos);
 
-            return data;
+}
+            return respuesta;
         }
+>>>>>>>>> Temporary merge branch 2
     }
-
 }
