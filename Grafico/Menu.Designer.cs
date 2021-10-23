@@ -47,6 +47,7 @@ namespace Gestor_De_Multas_De_Transito
             this.M_PCrear = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.busquedaClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.M_Vehiculos = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -202,7 +203,8 @@ namespace Gestor_De_Multas_De_Transito
             this.M_Personas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.M_PCrear,
             this.actualizarToolStripMenuItem,
-            this.eliminarToolStripMenuItem});
+            this.eliminarToolStripMenuItem,
+            this.busquedaClientesToolStripMenuItem});
             this.M_Personas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.M_Personas.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.M_Personas.Name = "M_Personas";
@@ -212,22 +214,29 @@ namespace Gestor_De_Multas_De_Transito
             // M_PCrear
             // 
             this.M_PCrear.Name = "M_PCrear";
-            this.M_PCrear.Size = new System.Drawing.Size(180, 22);
+            this.M_PCrear.Size = new System.Drawing.Size(199, 22);
             this.M_PCrear.Text = "Crear";
             this.M_PCrear.Click += new System.EventHandler(this.M_PCrear_Click);
             // 
             // actualizarToolStripMenuItem
             // 
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.actualizarToolStripMenuItem.Text = "Actualizar ";
             this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.actualizarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
+            // 
+            // busquedaClientesToolStripMenuItem
+            // 
+            this.busquedaClientesToolStripMenuItem.Name = "busquedaClientesToolStripMenuItem";
+            this.busquedaClientesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.busquedaClientesToolStripMenuItem.Text = "Busqueda Clientes";
+            this.busquedaClientesToolStripMenuItem.Click += new System.EventHandler(this.busquedaClientesToolStripMenuItem_Click);
             // 
             // menuStrip2
             // 
@@ -285,6 +294,7 @@ namespace Gestor_De_Multas_De_Transito
             // 
             // M_Usuario
             // 
+            this.M_Usuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.M_Usuario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.crearUsuariosToolStripMenuItem,
             this.actualizarUsuarioToolStripMenuItem,
@@ -337,7 +347,7 @@ namespace Gestor_De_Multas_De_Transito
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Navy;
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.PContainer);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Location = new System.Drawing.Point(13, 12);
@@ -347,11 +357,12 @@ namespace Gestor_De_Multas_De_Transito
             // 
             // PContainer
             // 
+            this.PContainer.BackColor = System.Drawing.Color.Navy;
             this.PContainer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PContainer.BackgroundImage")));
             this.PContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PContainer.Location = new System.Drawing.Point(160, 4);
+            this.PContainer.Location = new System.Drawing.Point(156, 4);
             this.PContainer.Name = "PContainer";
-            this.PContainer.Size = new System.Drawing.Size(541, 468);
+            this.PContainer.Size = new System.Drawing.Size(545, 468);
             this.PContainer.TabIndex = 1;
             // 
             // Menu
@@ -419,6 +430,7 @@ namespace Gestor_De_Multas_De_Transito
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel PContainer;
+        private System.Windows.Forms.ToolStripMenuItem busquedaClientesToolStripMenuItem;
     }
 }
 

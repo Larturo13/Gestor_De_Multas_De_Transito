@@ -58,5 +58,10 @@ namespace Gestor_De_Multas_De_Transito
         {
             AbrirFormHija(new Grafico.Personas.ActualizarPersonas());
         }
+
+        private void busquedaClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new Grafico.Personas.BuscarClientes());
+        }
     }
 }

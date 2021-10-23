@@ -45,9 +45,10 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(51, 153);
+            this.label2.Location = new System.Drawing.Point(59, 153);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 18);
             this.label2.TabIndex = 1;
@@ -56,9 +57,10 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label3.Location = new System.Drawing.Point(51, 203);
+            this.label3.Location = new System.Drawing.Point(59, 203);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 18);
             this.label3.TabIndex = 3;
@@ -67,9 +69,10 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Location = new System.Drawing.Point(51, 103);
+            this.label4.Location = new System.Drawing.Point(59, 103);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 18);
             this.label4.TabIndex = 4;
@@ -78,9 +81,10 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label5.Location = new System.Drawing.Point(51, 253);
+            this.label5.Location = new System.Drawing.Point(59, 253);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 18);
             this.label5.TabIndex = 5;
@@ -89,9 +93,10 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label6.Location = new System.Drawing.Point(51, 303);
+            this.label6.Location = new System.Drawing.Point(59, 303);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 18);
             this.label6.TabIndex = 7;
@@ -100,7 +105,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             // txt_DPI
             // 
             this.txt_DPI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.txt_DPI.Location = new System.Drawing.Point(210, 100);
+            this.txt_DPI.Location = new System.Drawing.Point(218, 100);
             this.txt_DPI.Name = "txt_DPI";
             this.txt_DPI.Size = new System.Drawing.Size(277, 24);
             this.txt_DPI.TabIndex = 8;
@@ -108,7 +113,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             // txt_NomApell
             // 
             this.txt_NomApell.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.txt_NomApell.Location = new System.Drawing.Point(210, 150);
+            this.txt_NomApell.Location = new System.Drawing.Point(218, 150);
             this.txt_NomApell.Name = "txt_NomApell";
             this.txt_NomApell.Size = new System.Drawing.Size(277, 24);
             this.txt_NomApell.TabIndex = 9;
@@ -116,7 +121,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             // txt_Direccion
             // 
             this.txt_Direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.txt_Direccion.Location = new System.Drawing.Point(210, 250);
+            this.txt_Direccion.Location = new System.Drawing.Point(218, 250);
             this.txt_Direccion.Name = "txt_Direccion";
             this.txt_Direccion.Size = new System.Drawing.Size(277, 24);
             this.txt_Direccion.TabIndex = 11;
@@ -124,7 +129,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             // txt_Telefono
             // 
             this.txt_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.txt_Telefono.Location = new System.Drawing.Point(210, 300);
+            this.txt_Telefono.Location = new System.Drawing.Point(218, 300);
             this.txt_Telefono.Name = "txt_Telefono";
             this.txt_Telefono.Size = new System.Drawing.Size(277, 24);
             this.txt_Telefono.TabIndex = 12;
@@ -132,7 +137,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             // Dtp_FechaNac
             // 
             this.Dtp_FechaNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.Dtp_FechaNac.Location = new System.Drawing.Point(210, 198);
+            this.Dtp_FechaNac.Location = new System.Drawing.Point(218, 198);
             this.Dtp_FechaNac.Name = "Dtp_FechaNac";
             this.Dtp_FechaNac.Size = new System.Drawing.Size(277, 24);
             this.Dtp_FechaNac.TabIndex = 13;
@@ -140,7 +145,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             // btn_Guardar
             // 
             this.btn_Guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Guardar.Location = new System.Drawing.Point(350, 349);
+            this.btn_Guardar.Location = new System.Drawing.Point(358, 349);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(137, 26);
             this.btn_Guardar.TabIndex = 14;
@@ -153,7 +158,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(525, 429);
+            this.ClientSize = new System.Drawing.Size(545, 468);
             this.Controls.Add(this.btn_Guardar);
             this.Controls.Add(this.Dtp_FechaNac);
             this.Controls.Add(this.txt_Telefono);

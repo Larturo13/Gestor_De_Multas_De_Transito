@@ -14,18 +14,14 @@ using System.Web;
 using System.Windows.Forms;
 
 
-namespace Gestor_De_Multas_De_Transito.Datos.EnvioPersonas
+namespace Gestor_De_Multas_De_Transito.Datos
 {
-    class IngresoPersonas
+    class ConexionApi
     {
-        public string IngresarDatos(Personas objUser)
+        public string IngresarDatos(Personas objUser, string url)
         {
             string respuesta;
-            var request = (HttpWebRequest)WebRequest.Create("http://apimultas.azurewebsites.net/api/AccPer/");
-            var request = (HttpWebRequest)WebRequest.Create("https://webapimultas.azurewebsites.net/api/InsertarPer");
-=========
-            var request = (HttpWebRequest)WebRequest.Create("https://webapimultas.azurewebsites.net/api/AccPer");
->>>>>>>>> Temporary merge branch 2
+            var request = (HttpWebRequest)WebRequest.Create(url);
             try
             {
                 request.ContentType = "application/json";
@@ -56,10 +52,10 @@ namespace Gestor_De_Multas_De_Transito.Datos.EnvioPersonas
             return respuesta;
         }
 
-        public string ActualizarDatos(Personas objUser)
+        public string ActualizarDatos(Personas objUser, string url)
         {
             string respuesta;
-            var request = (HttpWebRequest)WebRequest.Create("http://apimultas.azurewebsites.net/api/AccPer/");
+            var request = (HttpWebRequest)WebRequest.Create(url);
             try
             {
                 request.ContentType = "application/json";
@@ -91,7 +87,6 @@ namespace Gestor_De_Multas_De_Transito.Datos.EnvioPersonas
         }
 
         public dynamic Get(string url)
-
         {
 
             HttpWebRequest myWebRequest = (HttpWebRequest)WebRequest.Create(url);
@@ -107,9 +102,15 @@ namespace Gestor_De_Multas_De_Transito.Datos.EnvioPersonas
 
             dynamic data = JsonConvert.DeserializeObject(Datos);
 
-}
-            return respuesta;
+            return data;
         }
->>>>>>>>> Temporary merge branch 2
+
+        public async Task<string> GetHttp(string url)
+        {
+            WebRequest oRequest = WebRequest.Create(url);
+            WebResponse oResponse = oRequest.GetResponse();
+            StreamReader sr = new StreamReader(oResponse.GetResponseStream());
+            return await sr.ReadToEndAsync();
+        }
     }
 }

@@ -54,12 +54,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Datos\EnvioPersonas\IngresoPersonas.cs" />
+    <Compile Include="Datos\ConexionApi.cs" />
     <Compile Include="Grafico\Personas\ActualizarPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Grafico\Personas\ActualizarPersonas.Designer.cs">
       <DependentUpon>ActualizarPersonas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafico\Personas\BuscarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\Personas\BuscarClientes.Designer.cs">
+      <DependentUpon>BuscarClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Grafico\Personas\IngresarPersonas.cs">
       <SubType>Form</SubType>
@@ -78,6 +84,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Grafico\Personas\ActualizarPersonas.resx">
       <DependentUpon>ActualizarPersonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafico\Personas\BuscarClientes.resx">
+      <DependentUpon>BuscarClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafico\Personas\IngresarPersonas.resx">
       <DependentUpon>IngresarPersonas.cs</DependentUpon>
