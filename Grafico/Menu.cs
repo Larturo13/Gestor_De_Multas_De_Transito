@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Gestor_De_Multas_De_Transito.Datos;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,6 +64,11 @@ namespace Gestor_De_Multas_De_Transito
         private void busquedaClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormHija(new Grafico.Personas.BuscarClientes());
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

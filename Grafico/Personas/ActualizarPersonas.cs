@@ -83,22 +83,27 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             txt_Telefono.Text = "";
         }
 
-        private async void ActualizarPersonas_Load(object sender, EventArgs e)
+        private void ActualizarPersonas_Load(object sender, EventArgs e)
         {
             btn_Buscardenuevo.Enabled = false;
-            btn_Guardar.Enabled = false;
+            btn_Guardar.Enabled = false; 
+
+            ResizeRedraw = true;
+            this.Paint += new PaintEventHandler(cambiarfondo);
+            CargarDatos();
+        }
+
+        public async void CargarDatos()
+        {
             string url = ("http://apimultas.azurewebsites.net/api/AccPer");
 
             ConexionApi tomar = new ConexionApi();
             string respuesta = await tomar.GetHttp(url);
             List<Modelo.PersonaActu> lst = JsonConvert.DeserializeObject<List<Modelo.PersonaActu>>(respuesta);
-            dgv_Actualiza.DataSource = lst;
 
+            dgv_Actualiza.DataSource = lst;
             dgv_Actualiza.Columns[0].HeaderText = "DPI";
             dgv_Actualiza.Columns[1].HeaderText = "Nombre Apellido";
-
-            ResizeRedraw = true;
-            this.Paint += new PaintEventHandler(cambiarfondo);
         }
 
         private void button1_Click(object sender, EventArgs e)
