@@ -13,11 +13,14 @@ namespace Gestor_De_Multas_De_Transito.Modelo
         public DateTime fechaNacimiento { get; set; }
         public string direccion { get; set; }
         public string telefono { get; set; }
-
     }
     class PersonaActu
     { 
         public int dpi { get; set; }
         public string nombreApellido { get; set; }
+    }
+    class PersonaEli
+    {
+        public int dpi { get; set; }
     }
 }

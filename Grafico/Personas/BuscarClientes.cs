@@ -32,7 +32,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
         {
 
             string url = "http://apimultas.azurewebsites.net/api/AccPer";
-            ConexionApi tomar = new ConexionApi();
+            Datos.PersonasConexion tomar = new Datos.PersonasConexion();
             string respuesta = await tomar.GetHttp(url);
             List<Modelo.Personas> lst = JsonConvert.DeserializeObject<List<Modelo.Personas>>(respuesta);
             dgv_Buscar.DataSource = lst;

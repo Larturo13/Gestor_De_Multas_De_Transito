@@ -1,24 +1,20 @@
-﻿using Gestor_De_Multas_De_Transito.Modelo;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Script.Serialization;
-using Gestor_De_Multas_De_Transito.Grafico.Personas;
-using Newtonsoft.Json;
-using RestSharp;
 using System.Web;
-using System.Windows.Forms;
-
+using System.Web.Script.Serialization;
+using Gestor_De_Multas_De_Transito.Modelo;
+using Newtonsoft.Json;
 
 namespace Gestor_De_Multas_De_Transito.Datos
 {
-    class ConexionApi
+    class VehiculosConexion
     {
-        public string IngresarDatos(Personas objUser, string url)
+        public string IngresarDatos(Vehiculos objUser, string url)
         {
             string respuesta;
             var request = (HttpWebRequest)WebRequest.Create(url);
@@ -52,7 +48,7 @@ namespace Gestor_De_Multas_De_Transito.Datos
             return respuesta;
         }
 
-        public string ActualizarDatos(Personas objUser, string url)
+        public string ActualizarDatos(Vehiculos objUser, string url)
         {
             string respuesta;
             var request = (HttpWebRequest)WebRequest.Create(url);
@@ -60,6 +56,40 @@ namespace Gestor_De_Multas_De_Transito.Datos
             {
                 request.ContentType = "application/json";
                 request.Method = "PUT";
+
+                using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+                {
+                    string json = new JavaScriptSerializer().Serialize(objUser);
+                    streamWriter.Write(json);
+                }
+
+                var response = (HttpWebResponse)request.GetResponse();
+
+
+                using (var streamReader = new StreamReader(response.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    respuesta = result.ToString();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                respuesta = ex.Message;
+
+            }
+            return respuesta;
+        }
+
+        public string EliminarDatos(VehiculosEli objUser, string url)
+        {
+            string respuesta;
+            var request = (HttpWebRequest)WebRequest.Create(url);
+            try
+            {
+                request.ContentType = "application/json";
+                request.Method = "DELETE";
 
                 using (var streamWriter = new StreamWriter(request.GetRequestStream()))
                 {

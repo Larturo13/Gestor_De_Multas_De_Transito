@@ -54,7 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Datos\ConexionApi.cs" />
+    <Compile Include="Datos\PersonasConexion.cs" />
+    <Compile Include="Datos\VehiculosConexion.cs" />
     <Compile Include="Grafico\Personas\ActualizarPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +67,12 @@
     </Compile>
     <Compile Include="Grafico\Personas\BuscarClientes.Designer.cs">
       <DependentUpon>BuscarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafico\Personas\EliminarPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\Personas\EliminarPersona.Designer.cs">
+      <DependentUpon>EliminarPersona.cs</DependentUpon>
     </Compile>
     <Compile Include="Grafico\Personas\IngresarPersonas.cs">
       <SubType>Form</SubType>
@@ -79,7 +86,26 @@
     <Compile Include="Grafico\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grafico\Vehiculos\VehiculoEli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\Vehiculos\VehiculoEli.Designer.cs">
+      <DependentUpon>VehiculoEli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafico\Vehiculos\VehiculosBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\Vehiculos\VehiculosBusqueda.Designer.cs">
+      <DependentUpon>VehiculosBusqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafico\Vehiculos\VehiculosIng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\Vehiculos\VehiculosIng.Designer.cs">
+      <DependentUpon>VehiculosIng.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Personas.cs" />
+    <Compile Include="Modelo\Vehiculos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Grafico\Personas\ActualizarPersonas.resx">
@@ -88,11 +114,23 @@
     <EmbeddedResource Include="Grafico\Personas\BuscarClientes.resx">
       <DependentUpon>BuscarClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafico\Personas\EliminarPersona.resx">
+      <DependentUpon>EliminarPersona.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafico\Personas\IngresarPersonas.resx">
       <DependentUpon>IngresarPersonas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafico\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafico\Vehiculos\VehiculoEli.resx">
+      <DependentUpon>VehiculoEli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafico\Vehiculos\VehiculosBusqueda.resx">
+      <DependentUpon>VehiculosBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafico\Vehiculos\VehiculosIng.resx">
+      <DependentUpon>VehiculosIng.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -122,7 +160,6 @@
     <Folder Include="Grafico\AplicarMultas\" />
     <Folder Include="Grafico\ConstultarMultas\" />
     <Folder Include="Grafico\Usuarios\" />
-    <Folder Include="Grafico\Vehiculos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

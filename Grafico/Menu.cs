@@ -70,5 +70,25 @@ namespace Gestor_De_Multas_De_Transito
         {
 
         }
+
+        private void agregarVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new Grafico.Vehiculos.VehiculosIng());
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new Grafico.Personas.EliminarPersona());
+        }
+
+        private void eliminarVehiculoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new Grafico.Vehiculos.VehiculoEli());
+        }
+
+        private void ActualizarVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new Grafico.Vehiculos.VehiculosBusqueda());
+        }
     }
 }

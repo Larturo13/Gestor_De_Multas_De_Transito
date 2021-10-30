@@ -9,36 +9,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Gestor_De_Multas_De_Transito.Grafico.Personas
+namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
 {
-    public partial class IngresarPersonas : Form
+    public partial class VehiculosIng : Form
     {
-        public IngresarPersonas()
+        public VehiculosIng()
         {
             InitializeComponent();
         }
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            string url = "http://apimultas.azurewebsites.net/api/AccPer";
-            Modelo.Personas Personas = new Modelo.Personas();
-            Personas.dpi = Convert.ToInt32(txt_DPI.Text);
-            Personas.nombreApellido = txt_NomApell.Text;
-            Personas.fechaNacimiento = Dtp_FechaNac.Value;
-            Personas.direccion = txt_Direccion.Text;
-            Personas.telefono = txt_Telefono.Text;
+            string url = "http://apimultas.azurewebsites.net/api/AccVeh";
+            Modelo.Vehiculos Vehiculos = new Modelo.Vehiculos();
+            Vehiculos.nroPlaca = txt_nroPlaca.Text;
+            Vehiculos.tipo = txt_tipo.Text;
+            Vehiculos.marca = txt_marca.Text;
+            Vehiculos.modelo = txt_modelo.Text;
+            Vehiculos.anio = Convert.ToInt32(txt_anio.Text);
 
-            Datos.PersonasConexion ingresoP = new Datos.PersonasConexion();
+            Datos.VehiculosConexion IngresoV = new Datos.VehiculosConexion();
 
-            string miRespuesta = ingresoP.IngresarDatos(Personas, url);
+            string miRespuesta = IngresoV.IngresarDatos(Vehiculos, url);
 
             MessageBox.Show(miRespuesta);
         }
 
-        private void IngresarPersonas_Load(object sender, EventArgs e)
+        private void VehiculosIng_Load(object sender, EventArgs e)
         {
-            ResizeRedraw = true;
-            this.Paint += new PaintEventHandler(cambiarfondo);
+                ResizeRedraw = true;
+                this.Paint += new PaintEventHandler(cambiarfondo);
         }
         private void cambiarfondo(object sender, PaintEventArgs e)
         {

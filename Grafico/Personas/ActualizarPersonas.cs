@@ -15,8 +15,8 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
 {
     public partial class ActualizarPersonas : Form
     {
-        ConexionApi tomar = new ConexionApi();
-        ConexionApi ingresoP = new ConexionApi();
+        Datos.PersonasConexion tomar = new Datos.PersonasConexion();
+        Datos.PersonasConexion ingresoP = new Datos.PersonasConexion();
         Modelo.Personas Personas = new Modelo.Personas();
         public ActualizarPersonas()
         {
@@ -97,7 +97,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
         {
             string url = ("http://apimultas.azurewebsites.net/api/AccPer");
 
-            ConexionApi tomar = new ConexionApi();
+            Datos.PersonasConexion tomar = new Datos.PersonasConexion();
             string respuesta = await tomar.GetHttp(url);
             List<Modelo.PersonaActu> lst = JsonConvert.DeserializeObject<List<Modelo.PersonaActu>>(respuesta);
 
