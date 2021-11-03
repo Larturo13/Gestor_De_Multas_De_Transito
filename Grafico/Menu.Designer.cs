@@ -111,6 +111,7 @@ namespace Gestor_De_Multas_De_Transito
             this.M_ConMult.Name = "M_ConMult";
             this.M_ConMult.Size = new System.Drawing.Size(132, 22);
             this.M_ConMult.Text = "Consultar Multas";
+            this.M_ConMult.Click += new System.EventHandler(this.M_ConMult_Click);
             // 
             // menuStrip3
             // 
@@ -139,12 +140,14 @@ namespace Gestor_De_Multas_De_Transito
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
             this.toolStripMenuItem8.Size = new System.Drawing.Size(178, 22);
             this.toolStripMenuItem8.Text = "Generar Multas";
+            this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
             // 
             // abonarAMultaToolStripMenuItem
             // 
             this.abonarAMultaToolStripMenuItem.Name = "abonarAMultaToolStripMenuItem";
-            this.abonarAMultaToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.abonarAMultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.abonarAMultaToolStripMenuItem.Text = "Abonar a Multa";
+            this.abonarAMultaToolStripMenuItem.Click += new System.EventHandler(this.abonarAMultaToolStripMenuItem_Click);
             // 
             // menuStrip4
             // 
@@ -175,12 +178,14 @@ namespace Gestor_De_Multas_De_Transito
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
             this.toolStripMenuItem7.Size = new System.Drawing.Size(233, 22);
             this.toolStripMenuItem7.Text = "Crear Tipo de Multa";
+            this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
             // actualizarTipoDeMultaToolStripMenuItem
             // 
             this.actualizarTipoDeMultaToolStripMenuItem.Name = "actualizarTipoDeMultaToolStripMenuItem";
             this.actualizarTipoDeMultaToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.actualizarTipoDeMultaToolStripMenuItem.Text = "Actualizar Tipo de Multa";
+            this.actualizarTipoDeMultaToolStripMenuItem.Click += new System.EventHandler(this.actualizarTipoDeMultaToolStripMenuItem_Click);
             // 
             // eliminarTipoDeMultaToolStripMenuItem
             // 
@@ -278,6 +283,7 @@ namespace Gestor_De_Multas_De_Transito
             this.asignarVehiculoToolStripMenuItem.Name = "asignarVehiculoToolStripMenuItem";
             this.asignarVehiculoToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.asignarVehiculoToolStripMenuItem.Text = "Asignar Vehiculo";
+            this.asignarVehiculoToolStripMenuItem.Click += new System.EventHandler(this.asignarVehiculoToolStripMenuItem_Click);
             // 
             // ActualizarVehiculoToolStripMenuItem
             // 

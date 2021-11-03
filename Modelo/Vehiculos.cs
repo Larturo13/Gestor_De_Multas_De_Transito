@@ -18,4 +18,10 @@ namespace Gestor_De_Multas_De_Transito.Modelo
     {
         public string nroPlaca { get; set; }
     }
+
+    public class AsignarVehiculo
+    {
+        public string nroPlaca { get; set; }
+        public int dpi { get; set; }
+    }
 }

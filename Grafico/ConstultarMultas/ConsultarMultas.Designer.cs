@@ -1,7 +1,7 @@
 ﻿
-namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
+namespace Gestor_De_Multas_De_Transito.Grafico.ConstultarMultas
 {
-    partial class VehiculosBusqueda
+    partial class ConsultarMultas
     {
         /// <summary>
         /// Required designer variable.
@@ -32,20 +32,10 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btn_Buscar = new System.Windows.Forms.Button();
             this.dgv_Buscar = new System.Windows.Forms.DataGridView();
+            this.btn_Buscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Buscar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_Buscar
-            // 
-            this.btn_Buscar.Location = new System.Drawing.Point(390, 409);
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(143, 47);
-            this.btn_Buscar.TabIndex = 0;
-            this.btn_Buscar.Text = "Buscar";
-            this.btn_Buscar.UseVisualStyleBackColor = true;
-            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // dgv_Buscar
             // 
@@ -84,9 +74,19 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_Buscar.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Buscar.Size = new System.Drawing.Size(521, 391);
-            this.dgv_Buscar.TabIndex = 1;
+            this.dgv_Buscar.TabIndex = 3;
             // 
-            // VehiculosBusqueda
+            // btn_Buscar
+            // 
+            this.btn_Buscar.Location = new System.Drawing.Point(390, 409);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(143, 47);
+            this.btn_Buscar.TabIndex = 2;
+            this.btn_Buscar.Text = "Buscar";
+            this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+            // 
+            // ConsultarMultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -95,9 +95,8 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
             this.Controls.Add(this.dgv_Buscar);
             this.Controls.Add(this.btn_Buscar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "VehiculosBusqueda";
-            this.Text = "VehiculosBusqueda";
-            this.Load += new System.EventHandler(this.VehiculosBusqueda_Load);
+            this.Name = "ConsultarMultas";
+            this.Text = "ConsultarMultas";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Buscar)).EndInit();
             this.ResumeLayout(false);
 
@@ -105,7 +104,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
 
         #endregion
 
-        private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.DataGridView dgv_Buscar;
+        private System.Windows.Forms.Button btn_Buscar;
     }
 }

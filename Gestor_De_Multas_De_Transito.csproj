@@ -54,8 +54,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\GenerarMulta.cs" />
+    <Compile Include="Datos\MultaConexion.Cs" />
     <Compile Include="Datos\PersonasConexion.cs" />
     <Compile Include="Datos\VehiculosConexion.cs" />
+    <Compile Include="Grafico\AjustarMultas\ActualizarMulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\AjustarMultas\ActualizarMulta.Designer.cs">
+      <DependentUpon>ActualizarMulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafico\AjustarMultas\CrearMulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\AjustarMultas\CrearMulta.Designer.cs">
+      <DependentUpon>CrearMulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafico\AjustarMultas\EliminarMulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\AjustarMultas\EliminarMulta.Designer.cs">
+      <DependentUpon>EliminarMulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafico\AplicarMultas\GenerarMulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\AplicarMultas\GenerarMulta.Designer.cs">
+      <DependentUpon>GenerarMulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafico\AplicarMultas\PagoMulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\AplicarMultas\PagoMulta.Designer.cs">
+      <DependentUpon>PagoMulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafico\ConstultarMultas\ConsultarMultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\ConstultarMultas\ConsultarMultas.Designer.cs">
+      <DependentUpon>ConsultarMultas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grafico\Personas\ActualizarPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +124,12 @@
     <Compile Include="Grafico\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grafico\Vehiculos\AsignarVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\Vehiculos\AsignarVehiculos.Designer.cs">
+      <DependentUpon>AsignarVehiculos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grafico\Vehiculos\VehiculoEli.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,10 +148,29 @@
     <Compile Include="Grafico\Vehiculos\VehiculosIng.Designer.cs">
       <DependentUpon>VehiculosIng.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Multas.cs" />
     <Compile Include="Modelo\Personas.cs" />
     <Compile Include="Modelo\Vehiculos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Grafico\AjustarMultas\ActualizarMulta.resx">
+      <DependentUpon>ActualizarMulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafico\AjustarMultas\CrearMulta.resx">
+      <DependentUpon>CrearMulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafico\AjustarMultas\EliminarMulta.resx">
+      <DependentUpon>EliminarMulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafico\AplicarMultas\GenerarMulta.resx">
+      <DependentUpon>GenerarMulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafico\AplicarMultas\PagoMulta.resx">
+      <DependentUpon>PagoMulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafico\ConstultarMultas\ConsultarMultas.resx">
+      <DependentUpon>ConsultarMultas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafico\Personas\ActualizarPersonas.resx">
       <DependentUpon>ActualizarPersonas.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grafico\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafico\Vehiculos\AsignarVehiculos.resx">
+      <DependentUpon>AsignarVehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafico\Vehiculos\VehiculoEli.resx">
       <DependentUpon>VehiculoEli.cs</DependentUpon>
@@ -156,9 +222,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Grafico\AjustarMultas\" />
-    <Folder Include="Grafico\AplicarMultas\" />
-    <Folder Include="Grafico\ConstultarMultas\" />
     <Folder Include="Grafico\Usuarios\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

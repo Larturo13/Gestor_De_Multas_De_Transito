@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Gestor_De_Multas_De_Transito.Modelo;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,14 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Script.Serialization;
-using Gestor_De_Multas_De_Transito.Modelo;
-using Newtonsoft.Json;
 
 namespace Gestor_De_Multas_De_Transito.Datos
 {
-    class VehiculosConexion
+    class GenerarMulta
     {
-        public string IngresarDatos(Vehiculos objUser, string url)
+        public string IngresarDatos(GenMulta objUser, string url)
         {
             string respuesta;
             var request = (HttpWebRequest)WebRequest.Create(url);
@@ -47,8 +47,7 @@ namespace Gestor_De_Multas_De_Transito.Datos
             }
             return respuesta;
         }
-
-        public string ActualizarDatos(Vehiculos objUser, string url)
+        public string EliminarDatos(GenMultaPag objUser, string url)
         {
             string respuesta;
             var request = (HttpWebRequest)WebRequest.Create(url);
@@ -81,75 +80,6 @@ namespace Gestor_De_Multas_De_Transito.Datos
             }
             return respuesta;
         }
-
-        public string EliminarDatos(VehiculosEli objUser, string url)
-        {
-            string respuesta;
-            var request = (HttpWebRequest)WebRequest.Create(url);
-            try
-            {
-                request.ContentType = "application/json";
-                request.Method = "DELETE";
-
-                using (var streamWriter = new StreamWriter(request.GetRequestStream()))
-                {
-                    string json = new JavaScriptSerializer().Serialize(objUser);
-                    streamWriter.Write(json);
-                }
-
-                var response = (HttpWebResponse)request.GetResponse();
-
-
-                using (var streamReader = new StreamReader(response.GetResponseStream()))
-                {
-                    var result = streamReader.ReadToEnd();
-                    respuesta = result.ToString();
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-                respuesta = ex.Message;
-
-            }
-            return respuesta;
-        }
-
-        public string AsignarDatos(AsignarVehiculo objUser, string url)
-        {
-            string respuesta;
-            var request = (HttpWebRequest)WebRequest.Create(url);
-            try
-            {
-                request.ContentType = "application/json";
-                request.Method = "POST";
-
-                using (var streamWriter = new StreamWriter(request.GetRequestStream()))
-                {
-                    string json = new JavaScriptSerializer().Serialize(objUser);
-                    streamWriter.Write(json);
-                }
-
-                var response = (HttpWebResponse)request.GetResponse();
-
-
-                using (var streamReader = new StreamReader(response.GetResponseStream()))
-                {
-                    var result = streamReader.ReadToEnd();
-                    respuesta = result.ToString();
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-                respuesta = ex.Message;
-
-            }
-            return respuesta;
-        }
-
         public dynamic Get(string url)
         {
 
@@ -168,7 +98,6 @@ namespace Gestor_De_Multas_De_Transito.Datos
 
             return data;
         }
-
         public async Task<string> GetHttp(string url)
         {
             WebRequest oRequest = WebRequest.Create(url);
