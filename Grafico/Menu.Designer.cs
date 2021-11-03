@@ -33,6 +33,8 @@ namespace Gestor_De_Multas_De_Transito
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.M_ConMult = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarMultasActivasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarMultasHistorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.M_ApMult = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,12 +108,28 @@ namespace Gestor_De_Multas_De_Transito
             // M_ConMult
             // 
             this.M_ConMult.BackColor = System.Drawing.SystemColors.Highlight;
+            this.M_ConMult.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultarMultasActivasToolStripMenuItem,
+            this.consultarMultasHistorialToolStripMenuItem});
             this.M_ConMult.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.M_ConMult.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.M_ConMult.Name = "M_ConMult";
             this.M_ConMult.Size = new System.Drawing.Size(132, 22);
             this.M_ConMult.Text = "Consultar Multas";
-            this.M_ConMult.Click += new System.EventHandler(this.M_ConMult_Click);
+            // 
+            // consultarMultasActivasToolStripMenuItem
+            // 
+            this.consultarMultasActivasToolStripMenuItem.Name = "consultarMultasActivasToolStripMenuItem";
+            this.consultarMultasActivasToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.consultarMultasActivasToolStripMenuItem.Text = "Consultar Multas Activas";
+            this.consultarMultasActivasToolStripMenuItem.Click += new System.EventHandler(this.consultarMultasActivasToolStripMenuItem_Click);
+            // 
+            // consultarMultasHistorialToolStripMenuItem
+            // 
+            this.consultarMultasHistorialToolStripMenuItem.Name = "consultarMultasHistorialToolStripMenuItem";
+            this.consultarMultasHistorialToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.consultarMultasHistorialToolStripMenuItem.Text = "Consultar Multas Historial";
+            this.consultarMultasHistorialToolStripMenuItem.Click += new System.EventHandler(this.consultarMultasHistorialToolStripMenuItem_Click);
             // 
             // menuStrip3
             // 
@@ -145,7 +163,7 @@ namespace Gestor_De_Multas_De_Transito
             // abonarAMultaToolStripMenuItem
             // 
             this.abonarAMultaToolStripMenuItem.Name = "abonarAMultaToolStripMenuItem";
-            this.abonarAMultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.abonarAMultaToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.abonarAMultaToolStripMenuItem.Text = "Abonar a Multa";
             this.abonarAMultaToolStripMenuItem.Click += new System.EventHandler(this.abonarAMultaToolStripMenuItem_Click);
             // 
@@ -192,6 +210,7 @@ namespace Gestor_De_Multas_De_Transito
             this.eliminarTipoDeMultaToolStripMenuItem.Name = "eliminarTipoDeMultaToolStripMenuItem";
             this.eliminarTipoDeMultaToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.eliminarTipoDeMultaToolStripMenuItem.Text = "Eliminar Tipo de Multa";
+            this.eliminarTipoDeMultaToolStripMenuItem.Click += new System.EventHandler(this.eliminarTipoDeMultaToolStripMenuItem_Click);
             // 
             // menuStrip5
             // 
@@ -451,6 +470,8 @@ namespace Gestor_De_Multas_De_Transito
         private System.Windows.Forms.Panel PContainer;
         private System.Windows.Forms.ToolStripMenuItem busquedaClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarVehiculoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem consultarMultasActivasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarMultasHistorialToolStripMenuItem;
     }
 }
 

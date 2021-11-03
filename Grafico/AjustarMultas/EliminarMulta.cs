@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,7 +43,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
                     MessageBox.Show("No existe registro", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            string url = "http://apimultas.azurewebsites.net/api/AccPer";
+            string url = "http://apimultas.azurewebsites.net/api/AccMul";
             Multas.codigo = Convert.ToInt32(txt_Codigo.Text);
             int codigo1 = Convert.ToInt32(txt_Codigo.Text);
 
@@ -63,7 +64,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
 
             Datos.PersonasConexion tomar = new Datos.PersonasConexion();
             string respuesta = await tomar.GetHttp(url);
-            List<Modelo.PersonaActu> lst = JsonConvert.DeserializeObject<List<Modelo.PersonaActu>>(respuesta);
+            List<Modelo.Multas> lst = JsonConvert.DeserializeObject<List<Modelo.Multas>>(respuesta);
 
             dgv_Elimina.DataSource = lst;
             dgv_Elimina.Columns[0].HeaderText = "Codigo";
@@ -74,6 +75,22 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
         private void dgv_Elimina_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             txt_Codigo.Text = dgv_Elimina.CurrentCell.Value.ToString();
+        }
+
+        private void EliminarMulta_Load(object sender, EventArgs e)
+        {
+            CargarDatos();
+            ResizeRedraw = true;
+            this.Paint += new PaintEventHandler(cambiarfondo);
+        }
+        private void cambiarfondo(object sender, PaintEventArgs e)
+        {
+            Graphics graphics = e.Graphics;
+            Rectangle gradient_rectangle = new Rectangle(0, 0, Width, Height);
+            Brush b = new LinearGradientBrush(gradient_rectangle, Color.FromArgb(0, 170, 228), Color.FromArgb(0, 0, 128), 75f);
+
+            graphics.FillRectangle(b, gradient_rectangle);
+
         }
     }
 }

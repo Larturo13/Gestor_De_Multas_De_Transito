@@ -101,6 +101,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CrearMulta";
             this.Text = "CrearMulta";
+            this.Load += new System.EventHandler(this.CrearMulta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -88,6 +88,12 @@
     <Compile Include="Grafico\AplicarMultas\PagoMulta.Designer.cs">
       <DependentUpon>PagoMulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grafico\ConstultarMultas\ConsultarHistorialMultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\ConstultarMultas\ConsultarHistorialMultas.Designer.cs">
+      <DependentUpon>ConsultarHistorialMultas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grafico\ConstultarMultas\ConsultarMultas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grafico\AplicarMultas\PagoMulta.resx">
       <DependentUpon>PagoMulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafico\ConstultarMultas\ConsultarHistorialMultas.resx">
+      <DependentUpon>ConsultarHistorialMultas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafico\ConstultarMultas\ConsultarMultas.resx">
       <DependentUpon>ConsultarMultas.cs</DependentUpon>

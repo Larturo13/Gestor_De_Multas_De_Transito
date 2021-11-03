@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,7 +61,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
                     btn_Buscardenuevo.Enabled = true;
                     btn_Guardar.Enabled = true;
                     //txt_NomApell.Text = respuesta.nombreApellido[1].ToString();
-                    txt_valor.Text = respuesta.nombreApellido.ToString();
+                    txt_valor.Text = respuesta.valor.ToString();
 
                     txt_Codigo.Enabled = false;
                 }
@@ -71,6 +72,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
         {
             txt_Codigo.Enabled = true;
 
+            txt_Codigo.Text = "";
             txt_valor.Text = "";
         }
 
@@ -80,7 +82,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
 
             Datos.PersonasConexion tomar = new Datos.PersonasConexion();
             string respuesta = await tomar.GetHttp(url);
-            List<Modelo.PersonaActu> lst = JsonConvert.DeserializeObject<List<Modelo.PersonaActu>>(respuesta);
+            List<Modelo.Multas> lst = JsonConvert.DeserializeObject<List<Modelo.Multas>>(respuesta);
 
             dgv_Actualiza.DataSource = lst;
             dgv_Actualiza.Columns[0].HeaderText = "Codigo";
@@ -96,6 +98,17 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
         private void ActualizarMulta_Load(object sender, EventArgs e)
         {
             CargarDatos();
+            ResizeRedraw = true;
+            this.Paint += new PaintEventHandler(cambiarfondo);
+        }
+        private void cambiarfondo(object sender, PaintEventArgs e)
+        {
+            Graphics graphics = e.Graphics;
+            Rectangle gradient_rectangle = new Rectangle(0, 0, Width, Height);
+            Brush b = new LinearGradientBrush(gradient_rectangle, Color.FromArgb(0, 170, 228), Color.FromArgb(0, 0, 128), 75f);
+
+            graphics.FillRectangle(b, gradient_rectangle);
+
         }
     }
 }

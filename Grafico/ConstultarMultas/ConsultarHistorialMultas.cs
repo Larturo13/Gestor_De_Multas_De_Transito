@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Gestor_De_Multas_De_Transito.Grafico.ConstultarMultas
 {
-    public partial class ConsultarMultas : Form
+    public partial class ConsultarHistorialMultas : Form
     {
-        public ConsultarMultas()
+        public ConsultarHistorialMultas()
         {
             InitializeComponent();
         }
@@ -38,12 +38,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.ConstultarMultas
             dgv_Buscar.Columns[7].HeaderText = "Lugar";
         }
 
-        private void dgv_Buscar_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void ConsultarMultas_Load(object sender, EventArgs e)
+        private void ConsultarHistorialMultas_Load(object sender, EventArgs e)
         {
             ResizeRedraw = true;
             this.Paint += new PaintEventHandler(cambiarfondo);

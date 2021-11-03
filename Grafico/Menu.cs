@@ -112,14 +112,24 @@ namespace Gestor_De_Multas_De_Transito
             AbrirFormHija(new Grafico.AplicarMultas.GenerarMulta());
         }
 
-        private void M_ConMult_Click(object sender, EventArgs e)
+        private void abonarAMultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new Grafico.AplicarMultas.PagoMulta());
+        }
+
+        private void eliminarTipoDeMultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new Grafico.AjustarMultas.EliminarMulta());
+        }
+
+        private void consultarMultasActivasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormHija(new Grafico.ConstultarMultas.ConsultarMultas());
         }
 
-        private void abonarAMultaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void consultarMultasHistorialToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new Grafico.AplicarMultas.PagoMulta());
+            AbrirFormHija(new Grafico.ConstultarMultas.ConsultarHistorialMultas());
         }
     }
 }

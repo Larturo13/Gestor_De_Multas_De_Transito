@@ -112,6 +112,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EliminarMulta";
             this.Text = "EliminarMulta";
+            this.Load += new System.EventHandler(this.EliminarMulta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Elimina)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

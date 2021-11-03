@@ -86,6 +86,8 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
         private void VehiculoEli_Load(object sender, EventArgs e)
         {
             CargarDatos();
+            ResizeRedraw = true;
+            this.Paint += new PaintEventHandler(cambiarfondo);
         }
 
         private void dgv_Elimina_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
