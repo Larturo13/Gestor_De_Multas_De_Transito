@@ -92,17 +92,9 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
 
         private void ActualizarAsignacion_Load(object sender, EventArgs e)
         {
-            CargarDatos();
-        }
-        //funcion que se encarga de darle el aspecto de degradado
-        private void cambiarfondo(object sender, PaintEventArgs e)
-        {
-            Graphics graphics = e.Graphics;
-            Rectangle gradient_rectangle = new Rectangle(0, 0, Width, Height);
-            Brush b = new LinearGradientBrush(gradient_rectangle, Color.FromArgb(0, 170, 228), Color.FromArgb(0, 0, 128), 75f);
-
-            graphics.FillRectangle(b, gradient_rectangle);
-
+            CargarDatos(); 
+            ResizeRedraw = true;
+            this.Paint += new PaintEventHandler(cambiarfondo);
         }
         private void dgv_Actualiza_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -115,7 +107,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
             else
             {
                 string dpi = txt_nroPlaca.Text;
-                string Url = ("http://apimultas.azurewebsites.net/api/AccAs/" + "/" + dpi + "");
+                string Url = ("http://apimultas.azurewebsites.net/api/AccAs" + "/" + dpi + "");
                 dynamic respuesta = tomar.Get(Url);
 
                 if (string.IsNullOrEmpty(txt_nroPlaca.Text) || string.IsNullOrWhiteSpace(txt_nroPlaca.Text))
@@ -137,6 +129,16 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
 
                 }
             }
+        }
+        //funcion que se encarga de darle el aspecto de degradado
+        private void cambiarfondo(object sender, PaintEventArgs e)
+        {
+            Graphics graphics = e.Graphics;
+            Rectangle gradient_rectangle = new Rectangle(0, 0, Width, Height);
+            Brush b = new LinearGradientBrush(gradient_rectangle, Color.FromArgb(0, 170, 228), Color.FromArgb(0, 0, 128), 75f);
+
+            graphics.FillRectangle(b, gradient_rectangle);
+
         }
     }
 }
