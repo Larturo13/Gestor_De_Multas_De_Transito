@@ -18,7 +18,7 @@ namespace Gestor_De_Multas_De_Transito
         {
             InitializeComponent();
         }
-
+        //Funcion que se encarga de incrustar los formularios en un panel como formularios hijo
         private void AbrirFormHija(Object formhija)
         {
             if (this.PContainer.Controls.Count > 0)

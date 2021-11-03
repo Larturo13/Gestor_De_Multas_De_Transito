@@ -21,9 +21,9 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
         {
             InitializeComponent();
         }
-
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
+            //se valida que exista el elemento en la base de datos
             if (txt_nroPlaca.Text == "" || txt_nroPlaca.Text == null)
             {
                 MessageBox.Show("No debe dejar vacio este campo", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -46,18 +46,17 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
             string url = "http://apimultas.azurewebsites.net/api/AccVeh";
             Vehiculos.nroPlaca = txt_nroPlaca.Text;
             string nop1 = txt_nroPlaca.Text;
-
-            DialogResult verifica = MessageBox.Show("Esta seguro que quiere eliminar esta persona con DPI: " + nop1, "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Information); ;
+            //Se tira una msgbox para volver a preguntar si esta seguro de eliminar el elemento
+            DialogResult verifica = MessageBox.Show("Esta seguro que quiere eliminar este vehiculo con Placa: " + nop1, "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Information); ;
             if (verifica == DialogResult.Yes)
             {
                 string miRespuesta = ingresoV.EliminarDatos(Vehiculos, url);
 
                 MessageBox.Show(miRespuesta);
             }
-
             CargarDatos();
         }
-
+        //funcion que se encarga de llamar un get con una lista de los datos para mostrarlos en el dataviewgrid
         public async void CargarDatos()
         {
             string url = ("http://apimultas.azurewebsites.net/api/AccVeh");
@@ -73,6 +72,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
             dgv_Elimina.Columns[3].HeaderText = "Modelo";
             dgv_Elimina.Columns[4].HeaderText = "Año";
         }
+        //funcion que se encarga de darle el aspecto de degradado
         private void cambiarfondo(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
@@ -82,7 +82,6 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
             graphics.FillRectangle(b, gradient_rectangle);
 
         }
-
         private void VehiculoEli_Load(object sender, EventArgs e)
         {
             CargarDatos();

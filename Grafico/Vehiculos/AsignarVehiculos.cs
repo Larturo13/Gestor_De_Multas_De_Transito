@@ -19,27 +19,32 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
         {
             InitializeComponent();
         }
-
+        
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
+            //string con el link de la apiweb que despues se envia al httprequest
             string url = "http://apimultas.azurewebsites.net/api/AccAs";
+            //se envian los datos al objeto
             Modelo.AsignarVehiculo Vehiculos = new Modelo.AsignarVehiculo();
             Vehiculos.nroPlaca = txt_nroPlaca.Text;
             Vehiculos.dpi = Convert.ToInt32(txt_DPI.Text);
 
             Datos.VehiculosConexion IngresoV = new Datos.VehiculosConexion();
-
+            //se llama al httrequest y devuelve una respuesta de la base de datos 
             string miRespuesta = IngresoV.AsignarDatos(Vehiculos, url);
 
             MessageBox.Show(miRespuesta);
         }
 
+        //funcion que se encarga de cambiar el dataviewgrid
         private void txt_nroPlaca_Enter(object sender, EventArgs e)
         {
+
             dgv_Asigna1.Visible = true;
             CargarDatosVeh();
             dgv_Asigna2.Visible = false;
         }
+        //funcion que se encarga de llamar un get con una lista de los datos para mostrarlos en el dataviewgrid
         public async void CargarDatosVeh()
         {
             string url = ("http://apimultas.azurewebsites.net/api/AccVeh");
@@ -56,6 +61,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
             dgv_Asigna1.Columns[4].HeaderText = "Año";
 
         }
+        //funcion que se encarga de llamar un get con una lista de los datos para mostrarlos en el dataviewgrid
         public async void CargarDatosPer()
         {
             string url = "http://apimultas.azurewebsites.net/api/AccPer";
@@ -71,29 +77,30 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
             dgv_Asigna2.Columns[4].HeaderText = "Telefono";
 
         }
-
+        //funcion que se encarga de cambiar el dataviewgrid
         private void txt_DPI_Enter(object sender, EventArgs e)
         {
             dgv_Asigna2.Visible = true;
             CargarDatosPer();
             dgv_Asigna1.Visible = false;
         }
-
+        //funcion que se encarga de rellenar los datos cuando se da doble click en una celda
         private void dgv_Asigna_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             txt_nroPlaca.Text = dgv_Asigna1.CurrentCell.Value.ToString();
         }
-
+        //funcion que se encarga de rellenar los datos cuando se da doble click en una celda
         private void dgv_Asigna2_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             txt_DPI.Text = dgv_Asigna2.CurrentCell.Value.ToString();
         }
-
+        //En el load llama a la funcion que se encarga de darle el aspecto de degradado
         private void AsignarVehiculos_Load(object sender, EventArgs e)
         {
             ResizeRedraw = true;
             this.Paint += new PaintEventHandler(cambiarfondo);
         }
+        //funcion que se encarga de darle el aspecto de degradado
         private void cambiarfondo(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;

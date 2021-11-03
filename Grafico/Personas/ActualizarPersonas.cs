@@ -25,11 +25,13 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
+            //string con el link de la apiweb que despues se envia al httprequest
             string url = "http://apimultas.azurewebsites.net/api/AccPer";
+            //se envian los datos al objeto
             Personas.dpi = Convert.ToInt32(txt_DPI.Text);
             Personas.direccion = txt_Direccion.Text;
             Personas.telefono = txt_Telefono.Text;
-
+            //se llama al httrequest y devuelve una respuesta de la base de datos 
             string miRespuesta = ingresoP.ActualizarDatos(Personas, url);
 
             MessageBox.Show(miRespuesta);
@@ -38,7 +40,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
 
         private void txt_DPI_Validating(object sender, CancelEventArgs e)
         {
-            
+            //se valida que exista el elemento en la base de datos
             if (txt_DPI.Text == "" || txt_DPI.Text == null)
             {
                 MessageBox.Show("No debe dejar vacio este campo", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -92,7 +94,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             this.Paint += new PaintEventHandler(cambiarfondo);
             CargarDatos();
         }
-
+        //funcion que se encarga de llamar un get con una lista de los datos para mostrarlos en el dataviewgrid
         public async void CargarDatos()
         {
             string url = ("http://apimultas.azurewebsites.net/api/AccPer");
@@ -110,7 +112,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
         {
 
         }
-
+        //se valida que exista el elemento en la base de datos
         private void dgv_Actualiza_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             txt_DPI.Text = dgv_Actualiza.CurrentCell.Value.ToString();
@@ -146,6 +148,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
                 txt_DPI.Enabled = false;
             }
         }
+        //funcion que se encarga de darle el aspecto de degradado
         private void cambiarfondo(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;

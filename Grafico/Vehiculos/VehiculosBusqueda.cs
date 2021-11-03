@@ -19,7 +19,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
         {
             InitializeComponent();
         }
-
+        //funcion que se encarga de llamar un get con una lista de los datos para mostrarlos en el dataviewgrid
         private async void btn_Buscar_Click(object sender, EventArgs e)
         {
             string url = ("http://apimultas.azurewebsites.net/api/AccVeh");
@@ -35,6 +35,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
             dgv_Buscar.Columns[3].HeaderText = "Modelo";
             dgv_Buscar.Columns[4].HeaderText = "Año";
         }
+        //funcion que se encarga de darle el aspecto de degradado
         private void cambiarfondo(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;

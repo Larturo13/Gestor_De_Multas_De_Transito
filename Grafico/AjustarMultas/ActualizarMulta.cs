@@ -25,15 +25,17 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
 
         private void btn_Guardar_Click_1(object sender, EventArgs e)
         {
+            //string con el link de la apiweb que despues se envia al httprequest
             string url = "http://apimultas.azurewebsites.net/api/AccMul";
+            //se envian los datos al objeto
             Multas.codigo = Convert.ToInt32(txt_Codigo.Text);
             Multas.valor = Convert.ToInt32(txt_valor.Text);
-
+            //se llama al httrequest y devuelve una respuesta de la base de datos 
             string miRespuesta = ingresoP.ActualizarDatos(Multas, url);
 
             MessageBox.Show(miRespuesta);
         }
-
+        //se valida que exista el elemento en la base de datos
         private void txt_Codigo_Validating(object sender, CancelEventArgs e)
         {
             if (txt_Codigo.Text == "" || txt_Codigo.Text == null)
@@ -75,7 +77,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
             txt_Codigo.Text = "";
             txt_valor.Text = "";
         }
-
+        //funcion que se encarga de llamar un get con una lista de los datos para mostrarlos en el dataviewgrid
         public async void CargarDatos()
         {
             string url = ("http://apimultas.azurewebsites.net/api/AccMul");
@@ -90,17 +92,14 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
             dgv_Actualiza.Columns[2].HeaderText = "Valor";
         }
 
-        private void dgv_Actualiza_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void ActualizarMulta_Load(object sender, EventArgs e)
         {
-            CargarDatos();
             ResizeRedraw = true;
             this.Paint += new PaintEventHandler(cambiarfondo);
+            CargarDatos();
         }
+        //funcion que se encarga de darle el aspecto de degradado
         private void cambiarfondo(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
@@ -109,6 +108,11 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
 
             graphics.FillRectangle(b, gradient_rectangle);
 
+        }
+
+        private void dgv_Actualiza_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            txt_Codigo.Text = dgv_Actualiza.CurrentCell.Value.ToString();
         }
     }
 }

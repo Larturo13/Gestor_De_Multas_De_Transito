@@ -20,8 +20,10 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
+            //string con el link de la apiweb que despues se envia al httprequest
             string url = "http://apimultas.azurewebsites.net/api/AccPer";
             Modelo.Personas Personas = new Modelo.Personas();
+            //se envian los datos al objeto
             Personas.dpi = Convert.ToInt32(txt_DPI.Text);
             Personas.nombreApellido = txt_NomApell.Text;
             Personas.fechaNacimiento = Dtp_FechaNac.Value;
@@ -29,7 +31,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             Personas.telefono = txt_Telefono.Text;
 
             Datos.PersonasConexion ingresoP = new Datos.PersonasConexion();
-
+            //se llama al httrequest y devuelve una respuesta de la base de datos 
             string miRespuesta = ingresoP.IngresarDatos(Personas, url);
 
             MessageBox.Show(miRespuesta);
@@ -40,6 +42,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Personas
             ResizeRedraw = true;
             this.Paint += new PaintEventHandler(cambiarfondo);
         }
+        //funcion que se encarga de darle el aspecto de degradado
         private void cambiarfondo(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;

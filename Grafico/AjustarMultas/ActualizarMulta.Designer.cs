@@ -110,7 +110,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
             this.dgv_Actualiza.ReadOnly = true;
             this.dgv_Actualiza.Size = new System.Drawing.Size(521, 259);
             this.dgv_Actualiza.TabIndex = 24;
-            this.dgv_Actualiza.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Actualiza_CellContentDoubleClick);
+            this.dgv_Actualiza.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Actualiza_CellMouseDoubleClick);
             // 
             // btn_Buscardenuevo
             // 

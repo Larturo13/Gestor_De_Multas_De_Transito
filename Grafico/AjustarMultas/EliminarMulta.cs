@@ -24,6 +24,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
+            //se valida que exista el elemento en la base de datos
             if (txt_Codigo.Text == "" || txt_Codigo.Text == null)
             {
                 MessageBox.Show("No debe dejar vacio este campo", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -46,8 +47,8 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
             string url = "http://apimultas.azurewebsites.net/api/AccMul";
             Multas.codigo = Convert.ToInt32(txt_Codigo.Text);
             int codigo1 = Convert.ToInt32(txt_Codigo.Text);
-
-            DialogResult verifica = MessageBox.Show("Esta seguro que quiere eliminar esta persona con DPI: " + codigo1, "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Information); ;
+            //Se tira una msgbox para volver a preguntar si esta seguro de eliminar el elemento
+            DialogResult verifica = MessageBox.Show("Esta seguro que quiere eliminar esta multa con Codigo: " + codigo1, "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Information); ;
             if (verifica == DialogResult.Yes)
             {
                 string miRespuesta = ingresoM.EliminarDatos(Multas, url);
@@ -57,7 +58,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
 
             CargarDatos();
         }
-
+        //funcion que se encarga de llamar un get con una lista de los datos para mostrarlos en el dataviewgrid
         public async void CargarDatos()
         {
             string url = ("http://apimultas.azurewebsites.net/api/AccMul");
@@ -83,6 +84,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AjustarMultas
             ResizeRedraw = true;
             this.Paint += new PaintEventHandler(cambiarfondo);
         }
+        //funcion que se encarga de darle el aspecto de degradado
         private void cambiarfondo(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;

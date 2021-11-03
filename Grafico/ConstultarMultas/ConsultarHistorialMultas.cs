@@ -18,10 +18,10 @@ namespace Gestor_De_Multas_De_Transito.Grafico.ConstultarMultas
         {
             InitializeComponent();
         }
-
+        //funcion que se encarga de llamar un get con una lista de los datos para mostrarlos en el dataviewgrid
         private async void btn_Buscar_Click(object sender, EventArgs e)
         {
-            string url = ("http://apimultas.azurewebsites.net/api/AccVisMul");
+            string url = ("http://apimultas.azurewebsites.net/api/AccHis");
 
             Datos.MultaConexion tomar = new Datos.MultaConexion();
             string respuesta = await tomar.GetHttp(url);
@@ -43,6 +43,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.ConstultarMultas
             ResizeRedraw = true;
             this.Paint += new PaintEventHandler(cambiarfondo);
         }
+        //funcion que se encarga de darle el aspecto de degradado
         private void cambiarfondo(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;

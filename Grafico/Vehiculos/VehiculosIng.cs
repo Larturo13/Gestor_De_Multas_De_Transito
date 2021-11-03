@@ -20,7 +20,9 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
+            //string con el link de la apiweb que despues se envia al httprequest
             string url = "http://apimultas.azurewebsites.net/api/AccVeh";
+            //se envian los datos al objeto
             Modelo.Vehiculos Vehiculos = new Modelo.Vehiculos();
             Vehiculos.nroPlaca = txt_nroPlaca.Text;
             Vehiculos.tipo = txt_tipo.Text;
@@ -29,7 +31,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
             Vehiculos.anio = Convert.ToInt32(txt_anio.Text);
 
             Datos.VehiculosConexion IngresoV = new Datos.VehiculosConexion();
-
+            //se llama al httrequest y devuelve una respuesta de la base de datos 
             string miRespuesta = IngresoV.IngresarDatos(Vehiculos, url);
 
             MessageBox.Show(miRespuesta);
@@ -40,6 +42,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
                 ResizeRedraw = true;
                 this.Paint += new PaintEventHandler(cambiarfondo);
         }
+        //funcion que se encarga de darle el aspecto de degradado
         private void cambiarfondo(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;

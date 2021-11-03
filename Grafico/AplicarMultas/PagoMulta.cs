@@ -24,6 +24,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AplicarMultas
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
+            //se valida que exista el elemento en la base de datos
             if (txt_noMulta.Text == "" || txt_noMulta.Text == null)
             {
                 MessageBox.Show("No debe dejar vacio este campo", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -46,7 +47,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AplicarMultas
             string url = "https://apimultas.azurewebsites.net/api/AccMulGen";
             Multas.nro_multa = Convert.ToInt32(txt_noMulta.Text);
             int codigo1 = Convert.ToInt32(txt_noMulta.Text);
-
+            //Se tira una msgbox para volver a preguntar si esta seguro de eliminar el elemento
             DialogResult verifica = MessageBox.Show("Esta seguro que quiere pagar esta multa con codigo: " + codigo1, "Validacion", MessageBoxButtons.YesNo, MessageBoxIcon.Information); ;
             if (verifica == DialogResult.Yes)
             {
@@ -57,6 +58,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AplicarMultas
 
             CargarDatos();
         }
+        //funcion que se encarga de llamar un get con una lista de los datos para mostrarlos en el dataviewgrid
         public async void CargarDatos()
         {
 
@@ -83,6 +85,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AplicarMultas
             ResizeRedraw = true;
             this.Paint += new PaintEventHandler(cambiarfondo);
         }
+        //funcion que se encarga de darle el aspecto de degradado
         private void cambiarfondo(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
@@ -91,6 +94,11 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AplicarMultas
 
             graphics.FillRectangle(b, gradient_rectangle);
 
+        }
+
+        private void dgv_Elimina_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            txt_noMulta.Text = dgv_Elimina.CurrentCell.Value.ToString();
         }
     }
 }

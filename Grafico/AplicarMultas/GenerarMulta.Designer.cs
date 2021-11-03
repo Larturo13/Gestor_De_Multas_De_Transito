@@ -203,6 +203,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AplicarMultas
             this.txt_dpi.Name = "txt_dpi";
             this.txt_dpi.Size = new System.Drawing.Size(309, 24);
             this.txt_dpi.TabIndex = 32;
+            this.txt_dpi.Validating += new System.ComponentModel.CancelEventHandler(this.txt_dpi_Validating);
             // 
             // GenerarMulta
             // 

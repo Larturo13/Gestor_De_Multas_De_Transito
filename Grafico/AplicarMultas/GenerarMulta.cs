@@ -21,7 +21,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AplicarMultas
         {
             InitializeComponent();
         }
-
+        //funcion que se encarga de cargar una lista de objetos a una combobox
         private async void GenerarMulta_Load(object sender, EventArgs e)
         {
             string url = ("http://apimultas.azurewebsites.net/api/AccMul");
@@ -36,6 +36,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AplicarMultas
             this.Paint += new PaintEventHandler(cambiarfondo);
 
         }
+        //funcion que se encarga de darle el aspecto de degradado
         private void cambiarfondo(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
@@ -45,7 +46,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AplicarMultas
             graphics.FillRectangle(b, gradient_rectangle);
 
         }
-
+        //se valida que exista el elemento en la base de datos
         private void comboBox1_Validating(object sender, CancelEventArgs e)
         {
             if (comboBox1.Text == "" || comboBox1.Text == null)
@@ -76,8 +77,10 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AplicarMultas
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
+            //string con el link de la apiweb que despues se envia al httprequest
             string url = "https://apimultas.azurewebsites.net/api/AccMulgen";
             Modelo.GenMulta Multa = new Modelo.GenMulta();
+            //se envian los datos al objeto
             Multa.codigo_infraccion = Convert.ToInt32(comboBox1.SelectedValue);
             Multa.nroPlaca = txt_noPlaca.Text;
             Multa.dpi = Convert.ToInt32(txt_dpi.Text);
@@ -86,11 +89,12 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AplicarMultas
             Multa.lugar = txt_lugar.Text;
 
             Datos.GenerarMulta IngresoM = new Datos.GenerarMulta();
-
+            //se llama al httrequest y devuelve una respuesta de la base de datos 
             string miRespuesta = IngresoM.IngresarDatos(Multa, url);
 
             MessageBox.Show(miRespuesta);
         }
+        //se valida que exista el elemento en la base de datos
 
         private void txt_noPlaca_Validating_1(object sender, CancelEventArgs e)
         {
@@ -106,6 +110,30 @@ namespace Gestor_De_Multas_De_Transito.Grafico.AplicarMultas
                 dynamic respuesta = tomar.Get(Url);
 
                 if (string.IsNullOrEmpty(txt_noPlaca.Text) || string.IsNullOrWhiteSpace(txt_noPlaca.Text))
+                {
+                    MessageBox.Show("No debe dejar vacio este campo", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (respuesta == null)
+                {
+                    MessageBox.Show("No existe registro", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+        //se valida que exista el elemento en la base de datos
+
+        private void txt_dpi_Validating(object sender, CancelEventArgs e)
+        {
+            if (txt_dpi.Text == "" || txt_dpi.Text == null)
+            {
+                MessageBox.Show("No debe dejar vacio este campo", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                string nop = txt_dpi.Text;
+                string Url = ("http://apimultas.azurewebsites.net/api/AccPer" + "/" + nop + "");
+                dynamic respuesta = tomar.Get(Url);
+
+                if (string.IsNullOrEmpty(txt_dpi.Text) || string.IsNullOrWhiteSpace(txt_dpi.Text))
                 {
                     MessageBox.Show("No debe dejar vacio este campo", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
