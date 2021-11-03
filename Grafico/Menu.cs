@@ -131,5 +131,16 @@ namespace Gestor_De_Multas_De_Transito
         {
             AbrirFormHija(new Grafico.ConstultarMultas.ConsultarHistorialMultas());
         }
+
+        private void actualizarAsignacionDeVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new Grafico.Vehiculos.ActualizarAsignacion());
+        }
+
+        private void eliminarAsignacionDeVechiculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new Grafico.Vehiculos.EliminarAsignacion());
+
+        }
     }
 }

@@ -130,11 +130,23 @@
     <Compile Include="Grafico\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grafico\Vehiculos\ActualizarAsignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\Vehiculos\ActualizarAsignacion.Designer.cs">
+      <DependentUpon>ActualizarAsignacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grafico\Vehiculos\AsignarVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Grafico\Vehiculos\AsignarVehiculos.Designer.cs">
       <DependentUpon>AsignarVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafico\Vehiculos\EliminarAsignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafico\Vehiculos\EliminarAsignacion.Designer.cs">
+      <DependentUpon>EliminarAsignacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Grafico\Vehiculos\VehiculoEli.cs">
       <SubType>Form</SubType>
@@ -195,8 +207,14 @@
     <EmbeddedResource Include="Grafico\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafico\Vehiculos\ActualizarAsignacion.resx">
+      <DependentUpon>ActualizarAsignacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafico\Vehiculos\AsignarVehiculos.resx">
       <DependentUpon>AsignarVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafico\Vehiculos\EliminarAsignacion.resx">
+      <DependentUpon>EliminarAsignacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafico\Vehiculos\VehiculoEli.resx">
       <DependentUpon>VehiculoEli.cs</DependentUpon>

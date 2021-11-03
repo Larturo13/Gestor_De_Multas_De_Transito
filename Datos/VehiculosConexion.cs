@@ -14,6 +14,7 @@ namespace Gestor_De_Multas_De_Transito.Datos
 {
     class VehiculosConexion
     {
+        //httprequest que se comunica con la api de datos por medio de un POST
         public string IngresarDatos(Vehiculos objUser, string url)
         {
             string respuesta;
@@ -47,7 +48,7 @@ namespace Gestor_De_Multas_De_Transito.Datos
             }
             return respuesta;
         }
-
+        //httprequest que se comunica con la api de datos por medio de un PUT
         public string ActualizarDatos(Vehiculos objUser, string url)
         {
             string respuesta;
@@ -81,7 +82,7 @@ namespace Gestor_De_Multas_De_Transito.Datos
             }
             return respuesta;
         }
-
+        //httprequest que se comunica con la api de datos por medio de un DELETE
         public string EliminarDatos(VehiculosEli objUser, string url)
         {
             string respuesta;
@@ -115,7 +116,7 @@ namespace Gestor_De_Multas_De_Transito.Datos
             }
             return respuesta;
         }
-
+        //httprequest que se comunica con la api de datos por medio de un POST
         public string AsignarDatos(AsignarVehiculo objUser, string url)
         {
             string respuesta;
@@ -149,7 +150,75 @@ namespace Gestor_De_Multas_De_Transito.Datos
             }
             return respuesta;
         }
+        //httprequest que se comunica con la api de datos por medio de un PUT
+        public string ActualizarAsignacion(AsignarVehiculo objUser, string url)
+        {
+            string respuesta;
+            var request = (HttpWebRequest)WebRequest.Create(url);
+            try
+            {
+                request.ContentType = "application/json";
+                request.Method = "PUT";
 
+                using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+                {
+                    string json = new JavaScriptSerializer().Serialize(objUser);
+                    streamWriter.Write(json);
+                }
+
+                var response = (HttpWebResponse)request.GetResponse();
+
+
+                using (var streamReader = new StreamReader(response.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    respuesta = result.ToString();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                respuesta = ex.Message;
+
+            }
+            return respuesta;
+        }
+
+        public string EliminarAsignacion(AsignarVehiculo objUser, string url)
+        {
+            string respuesta;
+            var request = (HttpWebRequest)WebRequest.Create(url);
+            try
+            {
+                request.ContentType = "application/json";
+                request.Method = "DELETE";
+
+                using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+                {
+                    string json = new JavaScriptSerializer().Serialize(objUser);
+                    streamWriter.Write(json);
+                }
+
+                var response = (HttpWebResponse)request.GetResponse();
+
+
+                using (var streamReader = new StreamReader(response.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    respuesta = result.ToString();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                respuesta = ex.Message;
+
+            }
+            return respuesta;
+        }
+        //httprequest que se comunica con la api de datos por medio de un GET y devuelve un objeto
         public dynamic Get(string url)
         {
 
@@ -168,7 +237,7 @@ namespace Gestor_De_Multas_De_Transito.Datos
 
             return data;
         }
-
+        //httprequest que se comunica con la api de datos por medio de un GET y devuelve una lista de objetos
         public async Task<string> GetHttp(string url)
         {
             WebRequest oRequest = WebRequest.Create(url);

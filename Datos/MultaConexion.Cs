@@ -14,6 +14,7 @@ namespace Gestor_De_Multas_De_Transito.Datos
 {
     class MultaConexion
     {
+        //httprequest que se comunica con la api de datos por medio de un POST
         public string IngresarDatos(MultasInsert objUser, string url)
         {
             string respuesta;
@@ -47,6 +48,7 @@ namespace Gestor_De_Multas_De_Transito.Datos
             }
             return respuesta;
         }
+        //httprequest que se comunica con la api de datos por medio de un PUT
         public string ActualizarDatos(MultasActu objUser, string url)
         {
             string respuesta;
@@ -80,6 +82,7 @@ namespace Gestor_De_Multas_De_Transito.Datos
             }
             return respuesta;
         }
+        //httprequest que se comunica con la api de datos por medio de un DELETE
         public string EliminarDatos(MultasEli objUser, string url)
         {
             string respuesta;
@@ -113,6 +116,7 @@ namespace Gestor_De_Multas_De_Transito.Datos
             }
             return respuesta;
         }
+        //httprequest que se comunica con la api de datos por medio de un Get que devuelve un objeto
         public dynamic Get(string url)
         {
 
@@ -131,6 +135,7 @@ namespace Gestor_De_Multas_De_Transito.Datos
 
             return data;
         }
+        //httprequest que se comunica con la api de datos por medio de un Get que devuelve una lista objetos
         public async Task<string> GetHttp(string url)
         {
             WebRequest oRequest = WebRequest.Create(url);

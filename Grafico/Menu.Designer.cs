@@ -56,6 +56,8 @@ namespace Gestor_De_Multas_De_Transito
             this.asignarVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ActualizarVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarVehiculoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.actualizarAsignacionDeVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarAsignacionDeVechiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip6 = new System.Windows.Forms.MenuStrip();
             this.M_Usuario = new System.Windows.Forms.ToolStripMenuItem();
             this.crearUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -283,7 +285,9 @@ namespace Gestor_De_Multas_De_Transito
             this.agregarVehiculoToolStripMenuItem,
             this.asignarVehiculoToolStripMenuItem,
             this.ActualizarVehiculoToolStripMenuItem,
-            this.eliminarVehiculoToolStripMenuItem1});
+            this.eliminarVehiculoToolStripMenuItem1,
+            this.actualizarAsignacionDeVehiculoToolStripMenuItem,
+            this.eliminarAsignacionDeVechiculoToolStripMenuItem});
             this.M_Vehiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.M_Vehiculos.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.M_Vehiculos.Name = "M_Vehiculos";
@@ -293,30 +297,44 @@ namespace Gestor_De_Multas_De_Transito
             // agregarVehiculoToolStripMenuItem
             // 
             this.agregarVehiculoToolStripMenuItem.Name = "agregarVehiculoToolStripMenuItem";
-            this.agregarVehiculoToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.agregarVehiculoToolStripMenuItem.Size = new System.Drawing.Size(296, 22);
             this.agregarVehiculoToolStripMenuItem.Text = "Agregar Vehiculo";
             this.agregarVehiculoToolStripMenuItem.Click += new System.EventHandler(this.agregarVehiculoToolStripMenuItem_Click);
             // 
             // asignarVehiculoToolStripMenuItem
             // 
             this.asignarVehiculoToolStripMenuItem.Name = "asignarVehiculoToolStripMenuItem";
-            this.asignarVehiculoToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.asignarVehiculoToolStripMenuItem.Size = new System.Drawing.Size(296, 22);
             this.asignarVehiculoToolStripMenuItem.Text = "Asignar Vehiculo";
             this.asignarVehiculoToolStripMenuItem.Click += new System.EventHandler(this.asignarVehiculoToolStripMenuItem_Click);
             // 
             // ActualizarVehiculoToolStripMenuItem
             // 
             this.ActualizarVehiculoToolStripMenuItem.Name = "ActualizarVehiculoToolStripMenuItem";
-            this.ActualizarVehiculoToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.ActualizarVehiculoToolStripMenuItem.Size = new System.Drawing.Size(296, 22);
             this.ActualizarVehiculoToolStripMenuItem.Text = "Buscar Vehiculo";
             this.ActualizarVehiculoToolStripMenuItem.Click += new System.EventHandler(this.ActualizarVehiculoToolStripMenuItem_Click);
             // 
             // eliminarVehiculoToolStripMenuItem1
             // 
             this.eliminarVehiculoToolStripMenuItem1.Name = "eliminarVehiculoToolStripMenuItem1";
-            this.eliminarVehiculoToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
+            this.eliminarVehiculoToolStripMenuItem1.Size = new System.Drawing.Size(296, 22);
             this.eliminarVehiculoToolStripMenuItem1.Text = "Eliminar Vehiculo";
             this.eliminarVehiculoToolStripMenuItem1.Click += new System.EventHandler(this.eliminarVehiculoToolStripMenuItem1_Click);
+            // 
+            // actualizarAsignacionDeVehiculoToolStripMenuItem
+            // 
+            this.actualizarAsignacionDeVehiculoToolStripMenuItem.Name = "actualizarAsignacionDeVehiculoToolStripMenuItem";
+            this.actualizarAsignacionDeVehiculoToolStripMenuItem.Size = new System.Drawing.Size(296, 22);
+            this.actualizarAsignacionDeVehiculoToolStripMenuItem.Text = "Actualizar Asignacion de Vehiculo";
+            this.actualizarAsignacionDeVehiculoToolStripMenuItem.Click += new System.EventHandler(this.actualizarAsignacionDeVehiculoToolStripMenuItem_Click);
+            // 
+            // eliminarAsignacionDeVechiculoToolStripMenuItem
+            // 
+            this.eliminarAsignacionDeVechiculoToolStripMenuItem.Name = "eliminarAsignacionDeVechiculoToolStripMenuItem";
+            this.eliminarAsignacionDeVechiculoToolStripMenuItem.Size = new System.Drawing.Size(296, 22);
+            this.eliminarAsignacionDeVechiculoToolStripMenuItem.Text = "Eliminar Asignacion de Vechiculo";
+            this.eliminarAsignacionDeVechiculoToolStripMenuItem.Click += new System.EventHandler(this.eliminarAsignacionDeVechiculoToolStripMenuItem_Click);
             // 
             // menuStrip6
             // 
@@ -472,6 +490,8 @@ namespace Gestor_De_Multas_De_Transito
         private System.Windows.Forms.ToolStripMenuItem eliminarVehiculoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultarMultasActivasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarMultasHistorialToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem actualizarAsignacionDeVehiculoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarAsignacionDeVechiculoToolStripMenuItem;
     }
 }
 
