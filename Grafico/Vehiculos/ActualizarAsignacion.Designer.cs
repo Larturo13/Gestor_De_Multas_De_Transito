@@ -89,7 +89,6 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
             this.txt_nroPlaca.Name = "txt_nroPlaca";
             this.txt_nroPlaca.Size = new System.Drawing.Size(318, 24);
             this.txt_nroPlaca.TabIndex = 60;
-            this.txt_nroPlaca.Validating += new System.ComponentModel.CancelEventHandler(this.txt_nroPlaca_Validating);
             // 
             // label1
             // 

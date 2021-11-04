@@ -25,55 +25,20 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
             //string con el link de la apiweb que despues se envia al httprequest
-            string url = "http://apimultas.azurewebsites.net/api/AccPer";
+            string url = "http://apimultas.azurewebsites.net/api/AccAs";
             //se envian los datos al objeto
             Personas.dpi = Convert.ToInt32(txt_DPI.Text);
             Personas.nroPlaca = txt_nroPlaca.Text;
-            Personas.dpi = Convert.ToInt32(txt_DPI.Text);
             //se llama al httrequest y devuelve una respuesta de la base de datos 
             string miRespuesta = ingresoP.ActualizarAsignacion(Personas, url);
 
             MessageBox.Show(miRespuesta);
         }
 
-        private void txt_nroPlaca_Validating(object sender, CancelEventArgs e)
-        {
-            //se valida que exista el elemento en la base de datos
-            if (txt_nroPlaca.Text == "" || txt_nroPlaca.Text == null)
-            {
-                MessageBox.Show("No debe dejar vacio este campo", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                string dpi = txt_nroPlaca.Text;
-                string Url = ("http://apimultas.azurewebsites.net/api/AccAs/" + "/" + dpi + "");
-                dynamic respuesta = tomar.Get(Url);
-
-                if (string.IsNullOrEmpty(txt_nroPlaca.Text) || string.IsNullOrWhiteSpace(txt_nroPlaca.Text))
-                {
-                    MessageBox.Show("No debe dejar vacio este campo", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else if (respuesta == null)
-                {
-                    MessageBox.Show("No existe registro", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    string prueba = Convert.ToString(dpi);
-                    btn_Buscardenuevo.Enabled = true;
-                    btn_Guardar.Enabled = true;
-                    //txt_NomApell.Text = respuesta.nombreApellido[1].ToString();
-                    txt_DPI.Text = respuesta.dpi.ToString();
-                    txt_nroPlaca.Enabled = false;
-
-                }
-            }
-        }
-
         private void btn_Buscardenuevo_Click(object sender, EventArgs e)
         {
-            txt_nroPlaca.Enabled = true;
 
+            txt_nroPlaca.Text = "";
             txt_DPI.Text = "";
         }
         //funcion que se encarga de llamar un get con una lista de los datos para mostrarlos en el dataviewgrid
@@ -99,18 +64,18 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
         private void dgv_Actualiza_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //se valida que exista el elemento en la base de datos
-            txt_nroPlaca.Text = dgv_Actualiza.CurrentCell.Value.ToString();
-            if (txt_nroPlaca.Text == "" || txt_nroPlaca.Text == null)
+            txt_DPI.Text = dgv_Actualiza.CurrentCell.Value.ToString();
+            if (txt_DPI.Text == "" || txt_DPI.Text == null)
             {
                 MessageBox.Show("No debe dejar vacio este campo", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                string dpi = txt_nroPlaca.Text;
+                int dpi = Convert.ToInt32(txt_DPI.Text);
                 string Url = ("http://apimultas.azurewebsites.net/api/AccAs" + "/" + dpi + "");
                 dynamic respuesta = tomar.Get(Url);
 
-                if (string.IsNullOrEmpty(txt_nroPlaca.Text) || string.IsNullOrWhiteSpace(txt_nroPlaca.Text))
+                if (string.IsNullOrEmpty(txt_DPI.Text) || string.IsNullOrWhiteSpace(txt_DPI.Text))
                 {
                     MessageBox.Show("No debe dejar vacio este campo", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -124,8 +89,7 @@ namespace Gestor_De_Multas_De_Transito.Grafico.Vehiculos
                     btn_Buscardenuevo.Enabled = true;
                     btn_Guardar.Enabled = true;
                     //txt_NomApell.Text = respuesta.nombreApellido[1].ToString();
-                    txt_DPI.Text = respuesta.dpi.ToString();
-                    txt_nroPlaca.Enabled = false;
+                    txt_nroPlaca.Text = respuesta.nroPlaca.ToString();
 
                 }
             }
